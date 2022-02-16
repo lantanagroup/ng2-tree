@@ -1,0 +1,44 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "defaultProject": "ng2-tree",
+  "projects": {
+    "ng2-tree": {
+      "root": "./",
+      "sourceRoot": "src/demo",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist-demo",
+            "index": "src/demo/index.html",
+            "main": "src/demo/main.ts",
+            "polyfills": "src/demo/polyfills.ts",
+            "tsConfig": "src/demo/tsconfig.app.json",
+            "assets": ["src/demo/assets", "src/demo/favicon.ico"],
+            "styles": [
+              "node_modules/alertifyjs/build/css/alertify.css",
+              "node_modules/alertifyjs/build/css/themes/default.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "src/styles.css"
+            ],
+            "scripts": ["node_modules/alertifyjs/build/alertify.js"],
+            "es5BrowserSupport": true
+          }
+        }
+      },
+      "prefix": "app"
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {}
+}
